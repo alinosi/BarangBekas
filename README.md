@@ -5,3 +5,6 @@ barang milik sendiri seharusnya tidak muncul di market, pengelolaan gambar item,
 Terimakasih atas pengertiannya.
 
 website dikembangkan dengan php native.
+
+
+1.1 menambahkan ajax pada fitur pencarian barang
