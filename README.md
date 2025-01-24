@@ -7,4 +7,4 @@ Terimakasih atas pengertiannya.
 website dikembangkan dengan php native.
 
 
-1.1 menambahkan ajax pada fitur pencarian barang
+
