@@ -10,8 +10,13 @@ class Profile extends Controller {
         // Load the UserModel
         $userModel = $this->model('User_model');
 
-        // Get the user ID from the session (assuming you have stored it during login)
-        $userId = $_SESSION['user_id'];
+        if( !isset($_SESSION['user_id'])) {
+            header('Location: ' . BASEURL . '/login');
+        }
+        else {
+            // Get the user ID from the session (assuming you have stored it during login)
+            $userId = $_SESSION['user_id'];
+        }
 
         // Fetch user data from the database
         $data['user'] = $userModel->getUserById($userId); // Method to fetch user data by ID
