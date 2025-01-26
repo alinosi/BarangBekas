@@ -9,8 +9,12 @@ class Sell extends Controller {
         // Load the ProductModel
         $productModel = $this->model('Product_model');
 
-        // Get the user ID from the session
-        $userId = $_SESSION['user_id'];
+        if( !isset($_SESSION['user_id'])) {
+            header('Location: ' . BASEURL . '/login');
+        } else {
+            // Get the user ID from the session
+            $userId = $_SESSION['user_id'];
+        }
 
         // Fetch products for the logged-in user
         $data['products'] = $productModel->getProductsByUserId($userId);
