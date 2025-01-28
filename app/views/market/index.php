@@ -75,7 +75,13 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
+                        <?php if (isset($_SESSION['user_id'])) : ?>
                         <button type="button" class="btn btn-primary orderButton">Order</button>
+                        <?php else : ?>
+                        <button type="button" class="btn btn-primary nonorderButton" onclick="window.location.href='<?= BASEURL; ?>/Login';">
+                            Order
+                        </button>
+                        <?php endif; ?>                    
                     </div>
                 </div>
             </div>
