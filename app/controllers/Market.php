@@ -32,6 +32,7 @@
         public function productOrder($productId,$productPrice){
             if (!isset($_SESSION['user_id'])) {
                 header('location:'.BASEURL.'/login');
+                exit;
             }
             $orderModel = $this->model('Item_model');
             if ($orderModel->selectItemById($productId,$productPrice)) {
