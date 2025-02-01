@@ -1,3 +1,4 @@
+<?php use app\core\Flasher as Flasher;?>
 <head>
     <style>
         body {
@@ -39,7 +40,7 @@
                 <option value="olahraga">Sports</option>
             </select>
         </div>
-
+        <?php Flasher::flash()?>
         <div class="row">
             <div class="row">
     <?php foreach ($data['items'] as $index => $item) : ?>
@@ -75,13 +76,11 @@
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tutup</button>
-                        <?php if (isset($_SESSION['user_id'])) : ?>
-                        <button type="button" class="btn btn-primary orderButton">Order</button>
-                        <?php else : ?>
-                        <button type="button" class="btn btn-primary nonorderButton" onclick="window.location.href='<?= BASEURL; ?>/Login';">
+                        <button type="button" class="btn btn-primary nonorderButton" 
+                                 onclick="window.location.href=
+                                '<?= BASEURL; ?>/Market/productOrder/<?= $item['Product_id'] . '/' . $item['Price']; ?>';">
                             Order
-                        </button>
-                        <?php endif; ?>                    
+                        </button>                  
                     </div>
                 </div>
             </div>
